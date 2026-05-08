@@ -1,13 +1,11 @@
-package com.aula.projetojavafxexemplo;
+package com.aula.projetojavafxexemplo.controller;
 
-import com.aula.projetojavafxexemplo.db.DB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 public class HelloApplication extends Application {
     @Override
@@ -17,5 +15,9 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(HelloApplication.class, args);
     }
 }
