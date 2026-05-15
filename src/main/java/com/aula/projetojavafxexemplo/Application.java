@@ -26,12 +26,12 @@ public class Application extends javafx.application.Application {
     public static Scene criarTela(String url) {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(url));
         Stage stage = new Stage();
+        Scene scene;
         try{
             scene = new Scene(fxmlLoader.load());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        stage.setTitle("Pagina Inicial");
         stage.setScene(scene);
         stage.show();
 

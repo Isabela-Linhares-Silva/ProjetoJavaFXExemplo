@@ -39,8 +39,8 @@ public class TurmaDaoJDBC implements TurmaDao {
             st = conn.prepareStatement("select * from turma where id_turma =?");
             st.setInt(1,id);
             rs = st.executeQuery();// se guardar em alguma variavel vai retornar quantas linhas foram modificadas
-            if(rs!= null){
-                Turma t = new Turma(rs.getInt("id_turma"),rs.getString("nome"));
+            if(rs.next()){
+                return new Turma(rs.getInt("id_turma"),rs.getString("nome"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
